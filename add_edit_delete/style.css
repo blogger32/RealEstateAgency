@@ -1,0 +1,150 @@
+/* style.css - Оновлений дизайн для відповідності таблицям */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5; /* Той самий фон, що у списках */
+    margin: 0;
+    padding: 40px 20px;
+    color: #333;
+    min-height: 100vh;
+    display: flex; /* Центрування форми по центру екрана */
+    justify-content: center;
+    align-items: flex-start; /* Щоб довгі форми не обрізались зверху */
+}
+
+/* Картка форми (Білий блок) */
+.form-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* М'яка тінь як у таблиць */
+    width: 100%;
+    max-width: 550px; /* Фіксована ширина для акуратності */
+    border: 1px solid #e9ecef;
+}
+
+/* Заголовок форми */
+h1 {
+    margin: 0 0 30px 0;
+    color: #2c3e50;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 700;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0; /* Лінія під заголовком */
+}
+
+/* Група поля (Label + Input) */
+.form-group {
+    margin-bottom: 20px; /* Відступ між полями */
+    text-align: left; /* Текст завжди зліва */
+}
+
+/* Написи (Labels) */
+label {
+    font-weight: 600;
+    color: #555;
+    display: block; /* Робить напис окремим блоком над полем */
+    margin-bottom: 8px; /* Відступ від напису до поля */
+    font-size: 13px;
+    text-transform: uppercase; /* Стиль як у заголовках таблиці */
+    letter-spacing: 0.5px;
+}
+
+/* Поля вводу */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%; /* Розтягуємо на всю ширину контейнера */
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box; /* Щоб padding не ламав ширину */
+    background-color: #f8f9fa; /* Легкий сірий фон */
+    color: #495057;
+    transition: all 0.2s;
+}
+
+/* Ефект при кліку на поле */
+input:focus, select:focus {
+    background-color: #fff;
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+/* Сітка для полів в один рядок (для ціни, площі тощо) */
+.form-row {
+    display: flex;
+    gap: 20px; /* Відступ між сусідніми полями */
+}
+
+.form-row .form-group {
+    flex: 1; /* Поля займають рівну ширину */
+    margin-bottom: 20px;
+}
+
+/* Кнопка "Зберегти" */
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: #28a745; /* Зелений */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+    box-shadow: 0 2px 5px rgba(40, 167, 69, 0.3);
+}
+
+.btn-submit:hover {
+    background-color: #218838;
+}
+
+/* Спеціальний клас для кнопки "Оновити" (синій) */
+.btn-edit {
+    background-color: #007bff;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+/* Посилання "Скасувати" */
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    text-decoration: none;
+    color: #6c757d;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+/* Інформаційний блок (для edit_deal) */
+.info-block {
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    color: #495057;
+    font-size: 14px;
+    border-left: 4px solid #007bff;
+}

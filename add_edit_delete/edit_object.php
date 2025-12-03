@@ -1,5 +1,14 @@
 <?php
-// Лістинг коду: edit_object.php - Модифікація даних (UPDATE)
+
+session_start();
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: ../login.php");
+    exit;
+}
+// Якщо не адмін - зупинити виконання
+if ($_SESSION['role'] !== 'admin') {
+    die("Доступ заборонено! Тільки адміністратор може виконувати цю дію. <a href='../index.php'>На головну</a>");
+}
 require_once '../db_config.php';
 
 // Підключення до БД
@@ -79,6 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $id_objekt) {
 <head>
     <meta charset="UTF-8">
     <title>Редагування Об'єкта №<?php echo $id_objekt; ?></title>
+    <link rel="stylesheet" href="style.css">
     <style>
         label { display: block; margin-top: 10px; }
         input[type="text"], input[type="number"], select { width: 300px; padding: 5px; margin-top: 3px; }
